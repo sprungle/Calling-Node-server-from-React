@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# My notes:
+## Week 5, ex 1: Simple Node server
+1. create project: *nxp create-react-app namename*
+2. Create folder with name server
+3. Cd to server-folder in terminal:
+- Initialise new Node project: *npm init -y*
+- -> this creates package.json -file, which has basic info for Node project.
+5. Install Express library, which is a node framework: *npm install express*
+6. To avoid restarting server between every update, install Nodemon as a development dependancy:  *npm install --save-dev nodemon*
+- add configuration to pacjakge.json-file (i.o.w., commands to start the server etc): scripts: *"devstart": "nodemon index.js"*
+7. Create *index.js* -file under *server*-folder
+8. On index.js, define routes and create app by using express framework.
+9. Test server: *npm run devStart*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ex.2: Calling Node from React
 
-## Available Scripts
+10. Install axios-library: *npm install axios*
+11. Open App.js and implement useEffect, where Axios is used to call Node service and print out message. For testing purpose, print also on console.
+- State variable: display data
+- axios get: retrieve data
+- response.data: return data
+- json: message is here
+12. Test the app: open multiple terminals
+- In project directory run the App.js: *npm start*
+- In server-directory run/test the server: *npm run devStart*
 
-In the project directory, you can run:
+13. Error-message about undefined message 
+14.  Error-message about missing CORS:
+- To allow cross-origin calls, install cors library:
+- - In server-deirecotry: npm install cors 
+- - in index.js: *aquire* and *use* cors (check file for example)
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- NOW: localhost:3000 is showing the message as in App.js
+- AND: localhost:3001 is showing the json array, as per index.js
